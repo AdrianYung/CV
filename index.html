@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Currículo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #81ecec);
+            color: #2d3436;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: #0984e3;
+            color: white;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 80%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #0984e3;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #74b9ff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9rem;
+            animation: popIn 0.5s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0984e3;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        ¡Bienvenido a Mi Currículo!
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>Sobre mí</h2>
+            <p>Estudiante de Diversificado en el Liceo Canadiense. Apasionado por la programación y la tecnología, con experiencia en diseño de circuitos electrónicos y ensamblaje de computadoras.</p>
+        </div>
+
+        <div class="card">
+            <h2>Educación</h2>
+            <p>Liceo Canadiense (2023 - 2024)</p>
+            <p>Bachillerato en Computación</p>
+        </div>
+
+        <div class="card">
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <div class="skill">Programación</div>
+                <div class="skill">Uso de Office</div>
+                <div class="skill">Trabajo en equipo</div>
+                <div class="skill">Mantenimiento de computadoras</div>
+                <div class="skill">Aprender Rapido.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Proyectos Destacados</h2>
+            <p>Desarrollo de un brazo robótico basado en Arduino con motores paso a paso y servomotores, controlado por joysticks y un módulo ULN2003.</p>
+            <p>Paginas Web funcionales.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Mi Currículo | Adriano Guillermo Lopez Galicia
+    </footer>
+</body>
+</html>
