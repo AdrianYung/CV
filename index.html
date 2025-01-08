@@ -10,7 +10,58 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #74b9ff, #81ecec);
             color: #2d3436;
-            overflow-x: hidden;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            width: 250px;
+            background-color: #0984e3;
+            color: white;
+            height: 100vh;
+            padding: 20px 0;
+            position: fixed;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #74b9ff;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li.active {
+            background-color: #6c5ce7;
+        }
+
+        /* Contenido principal */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+            overflow-y: auto;
         }
 
         header {
@@ -20,23 +71,6 @@
             color: white;
             font-size: 2.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideDown 1s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .container {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .card {
@@ -44,10 +78,24 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            width: 80%;
-            max-width: 600px;
+            margin: 20px 0;
             animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #0984e3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0984e3;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            left: 250px;
         }
 
         @keyframes fadeIn {
@@ -60,92 +108,64 @@
                 transform: scale(1);
             }
         }
-
-        h2 {
-            margin-bottom: 10px;
-            color: #0984e3;
-        }
-
-        p {
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .skill {
-            background: #74b9ff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 5px;
-            font-size: 0.9rem;
-            animation: popIn 0.5s ease-out;
-        }
-
-        @keyframes popIn {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0984e3;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
-    <header>
-        ¡Bienvenido a Mi Currículo!
-    </header>
-    <div class="container">
-        <div class="card">
+    
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li class="active"><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#educacion">Educación</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header>
+            ¡Bienvenido a Mi Currículo!
+        </header>
+        <div id="sobre-mi" class="card">
             <h2>Sobre mí</h2>
-            <p>Estudiante de Diversificado en el Liceo Canadiense. Apasionado por la programación y la tecnología, con experiencia en diseño de circuitos electrónicos y ensamblaje de computadoras.</p>
+            <h2>Adriano Guillermo Lopez Galicia</h2>
+            <p>Soy un recien graduado  de Diversificado en el Liceo Canadiense. Apasionado por la programación y la tecnología, con experiencia en diseño de circuitos electrónicos y ensamblaje de computadoras.</p>
         </div>
 
-        <div class="card">
+        <div id="educacion" class="card">
             <h2>Educación</h2>
             <p>Liceo Canadiense (2023 - 2024)</p>
             <p>Bachillerato en Computación</p>
         </div>
 
-        <div class="card">
+        <div id="habilidades" class="card">
             <h2>Habilidades</h2>
-            <div class="skills">
-                <div class="skill">Programación</div>
-                <div class="skill">Uso de Office</div>
-                <div class="skill">Trabajo en equipo</div>
-                <div class="skill">Mantenimiento de computadoras</div>
-                <div class="skill">Aprender Rapido.</div>
-            </div>
+            <ul>
+                <li>Programación</li>
+                <li>Responsabilidad</li>
+                <li>Trabajo en equipo</li>
+                <li>Mantenimiento de computadoras</li>
+                <li>Aprender rápido</li>
+                <li>Me adapto Rapido</li>
+            </ul>
         </div>
 
-        <div class="card">
+        <div id="proyectos" class="card">
             <h2>Proyectos Destacados</h2>
             <p>Desarrollo de un brazo robótico basado en Arduino con motores paso a paso y servomotores, controlado por joysticks y un módulo ULN2003.</p>
-            <p>Paginas Web funcionales.</p>
+            <p>Páginas Web funcionales.</p>
+        </div>
+
+        <div id="contacto" class="card">
+            <h2>Contacto</h2>
+            <p>Correo: adrianogalicia473@gmail.com</p>
+            <p>Teléfono: +502 3746-1109</p>
         </div>
     </div>
 
     <footer>
-        © 2025 Mi Currículo | Adriano Guillermo Lopez Galicia
+        © 2025 Mi Currículo | Adriano Guillermo López Galicia
     </footer>
 </body>
 </html>
